@@ -7,6 +7,8 @@ interface ProjectProps {
   technologies: Array<string>
   liveLink?: string
   githubLink?: string
+  androidLink?: string
+  iosLink?: string
   key?: number // Add key prop for mapping
 }
 
@@ -21,6 +23,8 @@ function ProjectCard({
   technologies,
   liveLink,
   githubLink,
+  androidLink,
+  iosLink,
 }: ProjectCardProps) {
   return (
     <motion.div
@@ -57,6 +61,36 @@ function ProjectCard({
                   className="btn btn-primary text-sm px-4 py-2"
                 >
                   View Live
+                </a>
+              </motion.div>
+            )}
+            {androidLink && (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href={androidLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary text-sm px-4 py-2"
+                >
+                  View Android
+                </a>
+              </motion.div>
+            )}
+            {iosLink && (
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <a
+                  href={iosLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary text-sm px-4 py-2"
+                >
+                  View iOS
                 </a>
               </motion.div>
             )}
@@ -150,6 +184,27 @@ export default function Projects() {
   // Projects data from resume
   const projects: Array<ProjectProps> = [
     {
+      title: 'RepMirror',
+      description:
+        'A mobile app that transforms smartphones into AI-powered personal trainers using computer vision for real-time form analysis, automatic rep counting and voice coaching during workouts.',
+      image: '/projects/repmirror-preview.png',
+      technologies: ['React', 'React Native', 'Next JS', 'RevenueCat'],
+      liveLink: 'https://repmirror.netlify.app/',
+      // githubLink: 'https://github.com/yourusername/flyttman',
+    },
+    {
+      title: 'StarLight',
+      description:
+        'An App that enables users to conveniently schedule on-demand laundry and dry-cleaning pickups and deliveries, with real-time order tracking and secure online payments, enhancing the user experience with transparency and seamless transactions for laundry services.',
+      image: '/projects/starlight-preview.jpg',
+      technologies: ['React', 'React Native', 'Supabase', 'Paystack'],
+      // liveLink: 'https://repmirror.netlify.app/',
+      androidLink:
+        'https://play.google.com/store/apps/details?id=com.Starlight',
+      iosLink: 'https://apps.apple.com/ng/app/starlight-laundry/id6748286693',
+      // githubLink: 'https://github.com/yourusername/flyttman',
+    },
+    {
       title: 'Flyttman',
       description:
         'A comprehensive platform connecting customers with logistics partners across Sweden, featuring multi-user chat and secure payment systems.',
@@ -238,6 +293,8 @@ export default function Projects() {
               technologies={project.technologies}
               liveLink={project.liveLink}
               githubLink={project.githubLink}
+              androidLink={project.androidLink}
+              iosLink={project.iosLink}
             />
           ))}
         </motion.div>
