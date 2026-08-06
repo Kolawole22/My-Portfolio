@@ -1,50 +1,52 @@
-// Helper function to scroll to section
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
+function scrollToWork() {
+  document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 export default function Hero() {
   return (
-    <section id="hero" className="min-h-screen flex items-center pt-20 pb-16">
-      <div className="container">
-        <div className="max-w-3xl mx-auto text-center md:text-left">
-          <div className="animate-slideUp">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Bringing Ideas to Life with{' '}
-              <span className="text-primary">Clean Code</span> & Engaging
-              Experiences
-            </h1>
-
-            <p className="text-gray-300 text-lg md:text-xl mb-8 leading-relaxed">
-              Frontend-focused Software Developer with practical backend
-              experience, passionate about creating intuitive, user-friendly,
-              and visually polished web applications.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button
-                onClick={() => scrollToSection('projects')}
-                className="btn btn-primary"
-              >
-                View My Projects
-              </button>
-              <button
-                onClick={() => scrollToSection('contact')}
-                className="btn btn-outline"
-              >
-                Contact Me
-              </button>
-            </div>
-          </div>
-
-          {/* Subtle visual element */}
-          <div className="hidden md:block absolute right-10 bottom-10 opacity-20">
-            <div className="w-64 h-64 rounded-full bg-primary-light blur-3xl animate-pulse-soft"></div>
+    <section id="hero" className="hero-section">
+      <div className="site-shell hero-grid">
+        <div>
+          <p className="eyebrow">
+            Mobile application developer · React Native · TypeScript
+          </p>
+          <h1>
+            I build mobile products, and I stay with them through the hard
+            parts.
+          </h1>
+          <p className="hero-intro">
+            I’m Iwalewa, a software developer focused on React Native and
+            frontend engineering. I’ve shipped consumer apps, vendor tools,
+            payment flows, a smart-terminal printer bridge, and the backend work
+            needed to make those products hold together.
+          </p>
+          <div className="hero-actions">
+            <button className="text-link strong" onClick={scrollToWork}>
+              See selected work <span aria-hidden="true">↓</span>
+            </button>
+            <a className="text-link" href="mailto:kolawoleiwalewa@gmail.com">
+              Email me <span aria-hidden="true">↗</span>
+            </a>
           </div>
         </div>
+
+        <aside className="current-note" aria-label="Current work">
+          <p className="note-label">Currently</p>
+          <div className="current-role">
+            <strong>Platform Lead</strong>
+            <span>Proximity Communications</span>
+            <small>Mobile, web and backend · Remote</small>
+          </div>
+          <div className="current-role">
+            <strong>Mobile Application Developer</strong>
+            <span>Afriplanora</span>
+            <small>React Native contractor · Remote</small>
+          </div>
+          <p className="availability">
+            Interested in React Native, mobile product and frontend
+            opportunities.
+          </p>
+        </aside>
       </div>
     </section>
   )
