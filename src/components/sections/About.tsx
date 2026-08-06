@@ -3,7 +3,7 @@ export default function About() {
     <section id="about" className="content-section about-section">
       <div className="site-shell about-grid">
         <figure className="portrait-wrap">
-          <img src="/projects/pp.jpg" alt="Iwalewa Kolawole" />
+          <img src="/projects/pp.jpeg" alt="Iwalewa Kolawole" />
           <figcaption>
             Software developer based in Nigeria, working remotely.
           </figcaption>
