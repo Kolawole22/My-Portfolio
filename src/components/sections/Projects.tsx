@@ -1,3 +1,17 @@
+import * as m from 'motion/react-m'
+
+const ease = [0.22, 1, 0.36, 1] as const
+
+const reveal = {
+  hidden: { opacity: 0, y: 28 },
+  shown: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
+}
+
+const stagger = {
+  hidden: {},
+  shown: { transition: { staggerChildren: 0.1 } },
+}
+
 type ProjectLink = {
   label: string
   href: string
@@ -245,7 +259,13 @@ const projects: Array<Project> = [
 function ProjectMediaView({ media }: { media: ProjectMedia }) {
   if (media.kind === 'browser') {
     return (
-      <figure className="project-media browser-frame">
+      <m.figure
+        className="project-media browser-frame"
+        variants={reveal}
+        initial="hidden"
+        whileInView="shown"
+        viewport={{ once: true, amount: 0.25 }}
+      >
         <div className="browser-bar" aria-hidden="true">
           <span />
           <span />
@@ -260,14 +280,22 @@ function ProjectMediaView({ media }: { media: ProjectMedia }) {
           loading="lazy"
           decoding="async"
         />
-      </figure>
+      </m.figure>
     )
   }
 
   return (
-    <div className="project-media phone-strip">
+    <m.div
+      className="project-media phone-strip"
+      initial="hidden"
+      whileInView="shown"
+      viewport={{ once: true, amount: 0.25 }}
+      variants={stagger}
+    >
       {media.screenshots.map((screenshot) => (
-        <img
+        <m.img
+          variants={reveal}
+          whileHover={{ y: -6, transition: { duration: 0.3, ease } }}
           key={screenshot.src}
           src={screenshot.src}
           alt={screenshot.alt}
@@ -277,7 +305,7 @@ function ProjectMediaView({ media }: { media: ProjectMedia }) {
           decoding="async"
         />
       ))}
-    </div>
+    </m.div>
   )
 }
 
