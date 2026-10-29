@@ -10,20 +10,25 @@
   --color-deep: #17312a;
 }
 
+/*
+ * Fraunces is trimmed to what the site uses (SOFT 30, weights 400-600, and a
+ * single italic style), and uses font-display: optional so a late font never
+ * repaints the hero headline or shifts the layout.
+ */
 @font-face {
   font-family: 'Fraunces';
   font-style: normal;
-  font-weight: 100 900;
-  font-display: swap;
+  font-weight: 400 600;
+  font-display: optional;
   src: url('/fonts/fraunces.woff2') format('woff2-variations');
 }
 
 @font-face {
   font-family: 'Fraunces';
   font-style: italic;
-  font-weight: 100 900;
-  font-display: swap;
-  src: url('/fonts/fraunces-italic.woff2') format('woff2-variations');
+  font-weight: 450;
+  font-display: optional;
+  src: url('/fonts/fraunces-italic.woff2') format('woff2');
 }
 
 @font-face {
@@ -244,15 +249,11 @@ img {
   font-family: var(--display-font);
   font-weight: 450;
   letter-spacing: -0.03em;
-  font-variation-settings: 'SOFT' 30;
 }
 
 .hero-section h1 em {
   color: #9a4f32;
   font-style: italic;
-  font-variation-settings:
-    'SOFT' 100,
-    'WONK' 1;
 }
 
 .hero-section h1 {
@@ -623,7 +624,7 @@ img {
 }
 
 .experience-meta small {
-  color: #747b72;
+  color: #585e57;
 }
 
 .experience-item ul {

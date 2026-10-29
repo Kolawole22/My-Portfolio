@@ -23,8 +23,10 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="site-shell header-inner">
-        <Link to="/" className="brand" aria-label="Iwalewa Kolawole, home">
-          <span className="brand-mark">IK</span>
+        <Link to="/" className="brand">
+          <span className="brand-mark" aria-hidden="true">
+            IK
+          </span>
           <span>Iwalewa Kolawole</span>
         </Link>
 

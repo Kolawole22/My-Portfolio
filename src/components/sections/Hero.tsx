@@ -1,24 +1,25 @@
 import * as m from 'motion/react-m'
+import { phoneWidths, webpSources } from '../webpSources'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
 const heroCards = [
   {
-    src: '/projects/repmirror/form-check.jpg',
+    image: '/projects/repmirror/form-check',
     alt: 'RepMirror form-correction screen',
     className: 'hero-card is-left',
     rest: { rotate: -8, x: '-2%' },
     fanned: { rotate: -12, x: '-9%' },
   },
   {
-    src: '/projects/happy-hour/rewards.jpg',
+    image: '/projects/happy-hour/rewards',
     alt: 'Happy Hour rewards and account screen',
     className: 'hero-card is-right',
     rest: { rotate: 7, x: '2%' },
     fanned: { rotate: 11, x: '9%' },
   },
   {
-    src: '/projects/afriplanora/discover.jpg',
+    image: '/projects/afriplanora/discover',
     alt: 'Afriplanora map-based discovery screen',
     className: 'hero-card is-front',
     rest: { rotate: -1, x: '0%' },
@@ -42,13 +43,14 @@ function HeroCards() {
     >
       {heroCards.map((card, index) => (
         <m.img
-          key={card.src}
-          src={card.src}
+          key={card.image}
+          {...webpSources(card.image, phoneWidths)}
+          sizes="(max-width: 720px) 150px, 212px"
           alt=""
           className={card.className}
-          width={442}
-          height={960}
-          fetchPriority={index === 2 ? 'high' : 'auto'}
+          width={440}
+          height={954}
+          loading="lazy"
           variants={{
             hidden: { opacity: 0, y: 48, rotate: 0, x: '0%' },
             rest: {
@@ -74,11 +76,7 @@ export default function Hero() {
   return (
     <section id="hero" className="hero-section">
       <div className="site-shell hero-grid">
-        <m.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease }}
-        >
+        <div>
           <p className="eyebrow">
             Mobile application developer · React Native · TypeScript
           </p>
@@ -101,7 +99,7 @@ export default function Hero() {
               Email me <span aria-hidden="true">↗</span>
             </a>
           </div>
-        </m.div>
+        </div>
 
         <HeroCards />
       </div>

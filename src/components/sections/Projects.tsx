@@ -1,4 +1,5 @@
 import * as m from 'motion/react-m'
+import { browserWidths, phoneWidths, webpSources } from '../webpSources'
 
 const ease = [0.22, 1, 0.36, 1] as const
 
@@ -23,7 +24,8 @@ type Highlight = {
 }
 
 type Screenshot = {
-  src: string
+  /** Path without the `-<width>.webp` suffix. */
+  image: string
   alt: string
 }
 
@@ -68,15 +70,15 @@ const projects: Array<Project> = [
       kind: 'phone',
       screenshots: [
         {
-          src: '/projects/afriplanora/plan-trips.jpg',
+          image: '/projects/afriplanora/plan-trips',
           alt: 'Afriplanora itinerary planner showing a Lagos trip by day',
         },
         {
-          src: '/projects/afriplanora/discover.jpg',
+          image: '/projects/afriplanora/discover',
           alt: 'Afriplanora map-based discovery of local experiences',
         },
         {
-          src: '/projects/afriplanora/vendor.jpg',
+          image: '/projects/afriplanora/vendor',
           alt: 'Afriplanora vendor onboarding for listing services',
         },
       ],
@@ -119,15 +121,15 @@ const projects: Array<Project> = [
       kind: 'phone',
       screenshots: [
         {
-          src: '/projects/happy-hour/sign-in.jpg',
+          image: '/projects/happy-hour/sign-in',
           alt: 'Happy Hour sign-in screen',
         },
         {
-          src: '/projects/happy-hour/friends.jpg',
+          image: '/projects/happy-hour/friends',
           alt: 'Happy Hour friends screen for planning a hangout at a venue',
         },
         {
-          src: '/projects/happy-hour/rewards.jpg',
+          image: '/projects/happy-hour/rewards',
           alt: 'Happy Hour account screen with points, vouchers and referrals',
         },
       ],
@@ -165,15 +167,15 @@ const projects: Array<Project> = [
       kind: 'phone',
       screenshots: [
         {
-          src: '/projects/repmirror/rep-counting.jpg',
+          image: '/projects/repmirror/rep-counting',
           alt: 'RepMirror counting repetitions through the phone camera',
         },
         {
-          src: '/projects/repmirror/form-check.jpg',
+          image: '/projects/repmirror/form-check',
           alt: 'RepMirror comparing wrong and corrected exercise form',
         },
         {
-          src: '/projects/repmirror/progress.jpg',
+          image: '/projects/repmirror/progress',
           alt: 'RepMirror progress screen with workout history',
         },
       ],
@@ -212,7 +214,7 @@ const projects: Array<Project> = [
       kind: 'browser',
       url: 'santilotto.com',
       screenshot: {
-        src: '/projects/santilotto/web-app.jpg',
+        image: '/projects/santilotto/web-app',
         width: 1400,
         height: 875,
         alt: 'Santilotto web app home with games, results and live chat',
@@ -245,7 +247,7 @@ const projects: Array<Project> = [
       kind: 'browser',
       url: 'flyttman.se',
       screenshot: {
-        src: '/projects/flyttman/home.jpg',
+        image: '/projects/flyttman/home',
         width: 1400,
         height: 875,
         alt: 'Flyttman homepage with a free-quote call to action',
@@ -273,7 +275,8 @@ function ProjectMediaView({ media }: { media: ProjectMedia }) {
           <p>{media.url}</p>
         </div>
         <img
-          src={media.screenshot.src}
+          {...webpSources(media.screenshot.image, browserWidths)}
+          sizes="(max-width: 900px) calc(100vw - 32px), 860px"
           alt={media.screenshot.alt}
           width={media.screenshot.width}
           height={media.screenshot.height}
@@ -296,11 +299,12 @@ function ProjectMediaView({ media }: { media: ProjectMedia }) {
         <m.img
           variants={reveal}
           whileHover={{ y: -6, transition: { duration: 0.3, ease } }}
-          key={screenshot.src}
-          src={screenshot.src}
+          key={screenshot.image}
+          {...webpSources(screenshot.image, phoneWidths)}
+          sizes="(max-width: 720px) 40vw, 210px"
           alt={screenshot.alt}
-          width={442}
-          height={960}
+          width={440}
+          height={954}
           loading="lazy"
           decoding="async"
         />

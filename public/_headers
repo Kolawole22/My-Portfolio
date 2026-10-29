@@ -1,0 +1,13 @@
+# Netlify response headers. Hashed build output never changes, so cache it
+# for a year; fonts and images keep stable names, so cache them for shorter.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=2592000
+
+/projects/*
+  Cache-Control: public, max-age=604800
+
+/og-image.jpg
+  Cache-Control: public, max-age=604800

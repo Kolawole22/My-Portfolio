@@ -1,10 +1,13 @@
+import { webpSources } from '../webpSources'
+
 export default function About() {
   return (
     <section id="about" className="content-section about-section">
       <div className="site-shell about-grid">
         <figure className="portrait-wrap">
           <img
-            src="/projects/portrait.jpg"
+            {...webpSources('/projects/portrait', [480, 900])}
+            sizes="(max-width: 960px) 520px, 420px"
             alt="Iwalewa Kolawole"
             width={900}
             height={1200}

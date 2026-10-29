@@ -1,33 +1,18 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-import { RouterProvider, createRouter } from '@tanstack/react-router'
-
-// Import the generated route tree
-import { routeTree } from './routeTree.gen'
+import { RouterProvider } from '@tanstack/react-router'
+import { createAppRouter } from './router'
 
 import './styles.css'
 import reportWebVitals from './reportWebVitals.ts'
 
-// Create a new router instance
-const router = createRouter({
-  routeTree,
-  context: {},
-  defaultPreload: 'intent',
-  scrollRestoration: true,
-  defaultStructuralSharing: true,
-  defaultPreloadStaleTime: 0,
-})
+const router = createAppRouter()
 
-// Register the router instance for type safety
-declare module '@tanstack/react-router' {
-  interface Register {
-    router: typeof router
-  }
-}
-
-// Render the app
+// Render the app. In production, #app already holds prerendered HTML so the
+// page is readable before this runs; React replaces it with the live tree.
 const rootElement = document.getElementById('app')
-if (rootElement && !rootElement.innerHTML) {
+if (rootElement && !rootElement.hasAttribute('data-mounted')) {
+  rootElement.setAttribute('data-mounted', '')
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
