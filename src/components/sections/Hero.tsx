@@ -15,10 +15,11 @@ export default function Hero() {
             parts.
           </h1>
           <p className="hero-intro">
-            I’m Iwalewa, a software developer focused on React Native and
-            frontend engineering. I’ve shipped consumer apps, vendor tools,
-            payment flows, a smart-terminal printer bridge, and the backend work
-            needed to make those products hold together.
+            I’m Iwalewa, a mobile and full-stack engineer with three years of
+            shipping React Native products to the App Store and Play Store. I’ve
+            built consumer apps, vendor tools, payment flows, a smart-terminal
+            printer bridge, and the backend work needed to make those products
+            hold together.
           </p>
           <div className="hero-actions">
             <button className="text-link strong" onClick={scrollToWork}>
@@ -33,18 +34,17 @@ export default function Hero() {
         <aside className="current-note" aria-label="Current work">
           <p className="note-label">Currently</p>
           <div className="current-role">
-            <strong>Platform Lead</strong>
-            <span>Proximity Communications</span>
-            <small>Mobile, web and backend · Remote</small>
+            <strong>Sole Mobile Engineer</strong>
+            <span>Afriplanora</span>
+            <small>React Native contract · Remote</small>
           </div>
           <div className="current-role">
-            <strong>Mobile Application Developer</strong>
-            <span>Afriplanora</span>
-            <small>React Native contractor · Remote</small>
+            <strong>Previously Platform Lead</strong>
+            <span>Proximity Communications</span>
+            <small>Nov 2025 — Sep 2026 · Full-time</small>
           </div>
           <p className="availability">
-            Interested in React Native, mobile product and frontend
-            opportunities.
+            Open to full-time React Native, mobile and frontend roles.
           </p>
         </aside>
       </div>

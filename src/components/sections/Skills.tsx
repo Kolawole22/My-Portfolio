@@ -3,25 +3,26 @@ const capabilities = [
     title: 'Mobile product',
     description:
       'Cross-platform application architecture, navigation, offline-aware state, native capabilities and store delivery.',
-    tools: 'React Native, Expo, Expo Router, Reanimated, EAS',
+    tools: 'React Native, Expo, Expo Router, Reanimated, NativeWind, EAS',
   },
   {
     title: 'Frontend systems',
     description:
       'Responsive product interfaces, typed data flows, forms, dashboards and role-based application shells.',
-    tools: 'React, Next.js, TypeScript, TanStack, Tailwind CSS',
+    tools: 'React, Next.js, TypeScript, TanStack, Zustand, Tailwind CSS',
   },
   {
     title: 'Backend & data',
     description:
       'API features, authentication, integrations, data validation and the database work needed to unblock a product.',
-    tools: 'Node.js, Express, Python, Django, PostgreSQL, MySQL',
+    tools: 'Node.js, Express, PostgreSQL, Drizzle, MySQL, Python, Django',
   },
   {
     title: 'Release & integration',
     description:
-      'Payments, subscriptions, native SDKs, mobile release pipelines and production server deployment.',
-    tools: 'Stripe, Paystack, RevenueCat, Java, Nginx, PM2',
+      'Payments, subscriptions, native SDKs, automated testing, CI pipelines, mobile releases and container deployment.',
+    tools:
+      'Stripe, Paystack, RevenueCat, Java, Jest, Maestro, GitHub Actions, Docker, Cloud Run',
   },
 ]
 

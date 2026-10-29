@@ -8,34 +8,25 @@ type Role = {
 
 const roles: Array<Role> = [
   {
-    title: 'Platform Lead / Software Developer',
-    company: 'Proximity Communications',
-    period: 'Nov 2025 — present',
-    arrangement: 'Full-time · Remote',
-    details: [
-      'Lead development across a multi-application engagement platform for brands, venues, consumers, students, promoters and administrators.',
-      'Build frontend and backend features across React, React Native, Node.js, Express and PostgreSQL products.',
-      'Delivered location-aware campaigns, loyalty and rewards, QR workflows, push notifications, campus recycling operations and analytics.',
-    ],
-  },
-  {
-    title: 'Mobile Application Developer',
+    title: 'Mobile Application Developer (Sole Mobile Engineer)',
     company: 'Afriplanora',
     period: 'Feb 2026 — present',
     arrangement: 'Contract · Remote',
     details: [
-      'Built the complete traveller and vendor mobile application with React Native, Expo and TypeScript.',
-      'Own booking, itinerary, payment, availability, vendor operations, automated testing and mobile release workflows.',
+      'Shipped the iOS and Android travel marketplace solo, with multi-currency checkout across Paystack, Stripe and PayPal. It has ~3,000 downloads and 120+ live listings.',
+      'Built the vendor platform and, as sole developer, the admin web dashboard for users, services, KYC, earnings, complaints and broadcasts.',
+      'Made the home screen cold launch 2–3× faster, cut transaction history’s first load from ~4s to ~1s, and backed the app with 2,000+ automated tests in CI.',
     ],
   },
   {
-    title: 'Mobile Application Developer',
-    company: 'RepMirror AI',
-    period: 'Jul 2025 — Apr 2026',
-    arrangement: 'Contract · Remote',
+    title: 'Platform Lead / Software Developer',
+    company: 'Proximity Communications',
+    period: 'Nov 2025 — Sep 2026',
+    arrangement: 'Full-time · Remote',
     details: [
-      'Integrated KinesteX motion tracking and delivered workout, progress, subscription and notification flows.',
-      'Handled production builds and releases for both the Apple App Store and Google Play Store.',
+      'Solely built and led a multi-tenant proximity-marketing platform across React, React Native, Node.js, Express and PostgreSQL. It launched with its first brand client after a live product demo won the deal.',
+      'Engineered an API across 28 domain modules, including campaigns, loyalty, referrals, campus recycling, fraud signals and audit trails, plus Radar geofencing and scheduled jobs.',
+      'Automated delivery from Cloud Build to Cloud Run and instrumented production with Sentry, an OpenAPI spec and role-based access control.',
     ],
   },
   {
@@ -44,18 +35,29 @@ const roles: Array<Role> = [
     period: 'Nov 2025 — Jun 2026',
     arrangement: 'Contract · Remote',
     details: [
-      'Developed customer mobile, responsive web, administration, agent and Android POS applications.',
-      'Built the custom Nexgo SmartPOS printer bridge and automated its native setup through an Expo config plugin.',
+      'Built a live lottery platform solo across three codebases and 200+ screens: customer mobile and web apps, admin and agent portals, and an Android POS app.',
+      'Wrote a Java-to-React Native bridge for the Nexgo SmartPOS printer and automated its native setup through an Expo config plugin.',
     ],
   },
   {
-    title: 'Frontend Developer / Deployment Engineer',
-    company: 'Flyttman',
-    period: 'Nov 2024 — Sep 2025',
+    title: 'Mobile Application Developer',
+    company: 'RepMirror AI',
+    period: 'Jul 2025 — Feb 2026',
     arrangement: 'Contract · Remote',
     details: [
-      'Built marketplace workflows, polling-based messaging and Stripe payments, with occasional backend fixes.',
-      'Set up and managed frontend and backend VPS deployments using Nginx, PM2 and MySQL.',
+      'Released an AI fitness app with camera-based rep counting through the KinesteX SDK, and owned builds, store submissions and OTA updates.',
+      'Added workout plans, challenges, leaderboards and RevenueCat subscriptions, and built the Next.js marketing site and admin console.',
+    ],
+  },
+  {
+    title: 'Mobile & Full-Stack Developer',
+    company: 'Trex Techies',
+    period: 'Jun 2024 — Jul 2025',
+    arrangement: 'Contract · Remote',
+    details: [
+      'Flyttman: built the 114-page Next.js frontend in English and Swedish, implemented Stripe checkout and invoicing on the backend, and deployed both on VPS.',
+      'Ajoo.me: built the Expo group-savings app with group wallets, contributions and auto-debit bank transfers.',
+      'Spectrum: built a React Native tax-payment and compliance app for the Osun State Government.',
     ],
   },
   {
@@ -76,11 +78,10 @@ export default function Experience() {
       <div className="site-shell two-column-section">
         <div className="section-intro sticky-intro">
           <p className="eyebrow">Experience</p>
-          <h2>Overlapping roles, clearly separated.</h2>
+          <h2>Three years of shipping to production.</h2>
           <p>
-            Remote work gave me room to take on focused contracts alongside my
-            primary role. Each engagement is labelled so the timeline stays
-            honest.
+            Most of my work has been remote. Some contracts ran alongside my
+            full-time role, so each one shows its own dates and arrangement.
           </p>
           <a
             className="text-link"
@@ -119,9 +120,9 @@ export default function Experience() {
           <div className="earlier-work">
             <p className="note-label">Earlier contract work</p>
             <p>
-              Spectrum tax-payment app for Osun State Government; Farmers
-              Marketplace for IFAD; and frontend work on Cream for King David
-              Elites.
+              Took over and published the Farmers Marketplace Android app for
+              IFAD, and contributed React and Next.js frontend work to Cream for
+              King David Elites.
             </p>
           </div>
         </div>

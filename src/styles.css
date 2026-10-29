@@ -367,6 +367,88 @@ img {
   color: #20241f;
 }
 
+.project-media {
+  margin: 30px 0 0;
+}
+
+.phone-strip {
+  display: flex;
+  gap: 16px;
+}
+
+.phone-strip img {
+  width: min(31%, 210px);
+  height: auto;
+  aspect-ratio: 442 / 960;
+  object-fit: cover;
+  border: 1px solid #c9c5ba;
+  border-radius: 18px;
+  background: #e7e3da;
+}
+
+.browser-frame {
+  max-width: 860px;
+  overflow: hidden;
+  border: 1px solid #c9c5ba;
+  border-radius: 10px;
+  background: #e7e3da;
+}
+
+.browser-frame img {
+  width: 100%;
+  height: auto;
+}
+
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-bottom: 1px solid #c9c5ba;
+}
+
+.browser-bar span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #c9c5ba;
+}
+
+.browser-bar p {
+  margin: 0 0 0 12px;
+  color: #6a7068;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.72rem;
+}
+
+.project-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 44px;
+  margin: 28px 0 0;
+}
+
+.project-highlights > div {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.project-highlights dd {
+  margin: 0;
+  color: #9a4f32;
+  font-family: var(--display-font);
+  font-size: 1.9rem;
+  line-height: 1.1;
+}
+
+.project-highlights dt {
+  max-width: 180px;
+  margin-top: 4px;
+  color: #6a7068;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
 .project-footer {
   display: flex;
   justify-content: space-between;
@@ -813,6 +895,23 @@ img {
 
   .project-links {
     justify-content: flex-start;
+  }
+
+  .phone-strip {
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+  }
+
+  .phone-strip img {
+    flex: none;
+    width: 42%;
+    scroll-snap-align: start;
+    border-radius: 14px;
+  }
+
+  .project-highlights {
+    gap: 16px 28px;
   }
 
   .experience-meta {

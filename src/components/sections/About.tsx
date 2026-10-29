@@ -3,7 +3,14 @@ export default function About() {
     <section id="about" className="content-section about-section">
       <div className="site-shell about-grid">
         <figure className="portrait-wrap">
-          <img src="/projects/pp.jpeg" alt="Iwalewa Kolawole" />
+          <img
+            src="/projects/portrait.jpg"
+            alt="Iwalewa Kolawole"
+            width={900}
+            height={1200}
+            loading="lazy"
+            decoding="async"
+          />
           <figcaption>
             Software developer based in Nigeria, working remotely.
           </figcaption>
@@ -24,7 +31,7 @@ export default function About() {
             I started with web frontend work, built an internal inventory system
             during my NYSC year at BUA, and gradually moved into production
             mobile products. Since then I’ve worked on fitness, travel, lottery,
-            logistics, loyalty and government-service products.
+            logistics, loyalty, group-savings and government-service products.
           </p>
           <p>
             I care about clear interfaces, accurate product behaviour and code
@@ -39,7 +46,8 @@ export default function About() {
             <div>
               <dt>Comfortable across</dt>
               <dd>
-                REST APIs, Node.js, SQL, payments, releases and VPS deployment
+                REST APIs, Node.js, PostgreSQL, payments, CI/CD, Docker and
+                Cloud Run
               </dd>
             </div>
             <div>
