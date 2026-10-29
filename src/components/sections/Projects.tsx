@@ -233,8 +233,8 @@ const projects: Array<Project> = [
       screenshot: {
         src: '/projects/flyttman/home.jpg',
         width: 1400,
-        height: 611,
-        alt: 'Flyttman homepage',
+        height: 875,
+        alt: 'Flyttman homepage with a free-quote call to action',
       },
     },
     stack: ['Next.js', 'TypeScript', 'next-intl', 'Stripe', 'MySQL', 'Nginx'],
